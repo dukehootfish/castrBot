@@ -4,7 +4,6 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import frc.robot.motors.PIDFGains;
@@ -12,16 +11,10 @@ import frc.robot.motors.PIDFGains;
 import com.revrobotics.CANSparkBase.ControlType;
 
 import edu.wpi.first.wpilibj.Servo;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj.Servo;
-import frc.robot.constants.ShooterConstants;
-import edu.wpi.first.wpilibj.Servo;
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.constants.ShooterConstants;
 import frc.robot.motors.DBugSparkFlex;
 
 public class Shooter extends SubsystemBase {
-  private static final boolean UPDATE_DASHBOARD = true;
   /** Creates a new ExampleSubsystem. */
   private DBugSparkFlex _shooter;
   private Servo _feeder;
@@ -44,5 +37,8 @@ public class Shooter extends SubsystemBase {
   }
   public void stopFeeding() {
     this._feeder.set(0);
+  }
+  public Trigger getTrigger() {
+    return this._trg;
   }
 }
